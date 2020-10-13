@@ -1,9 +1,9 @@
-import API_KEY from '../../config';
+import {API_KEY} from './config';
 
 export const moviesRequests = {
     fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
-    fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&with_networks=213`,
-    fetchTopRated: `/movie/top-rated?api_key=${API_KEY}&language=en-US`,
+    fetchNetflixOriginals: `/discover/tv?api_key=${API_KEY}&sort_by=popularity.desc&with_networks=213`,
+    fetchTopRated: `/movie/top_rated?api_key=${API_KEY}&language=en-US`,
     fetchActionMovies: `/discover/movie?api_key=${API_KEY}&with_genres=28`,
     fetchAdventureMovies: `/discover/movie?api_key=${API_KEY}&with_genres=12`,
     fetchAnimationMovies: `/discover/movie?api_key=${API_KEY}&with_genres=16`,
