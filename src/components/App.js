@@ -4,6 +4,7 @@ import './App.css';
 //Components
 import Row from './Row';
 import Banner from './Banner';
+import Navbar from './Navbar';
 
 //FetchUrls
 import { moviesRequests, tvRequests } from '../services/endpoints';
@@ -11,32 +12,25 @@ import { moviesRequests, tvRequests } from '../services/endpoints';
 function App() {
   return (
     <div className="App">
-      {/* Nav */}
+      <Navbar />
       <Banner />
-      <Row title="Trending Now" fetchUrl={moviesRequests.fetchTrending} />
+      <Row title="Trending Now" fetchUrl={tvRequests.fetchTredingSeriesNow} />
       <Row
         title="NETFLIX Originals"
         fetchUrl={moviesRequests.fetchNetflixOriginals}
         isLarge={true}
       />
-      <Row title="Top Rated Movies" fetchUrl={moviesRequests.fetchTopRated} />
-      <Row title="Crime Movies" fetchUrl={moviesRequests.fetchCrimeMovies} />
-      <Row title="Actions Movies" fetchUrl={moviesRequests.fetchActionMovies} />
-      <Row title="Adventures Movies" fetchUrl={moviesRequests.fetchAdventureMovies} />
-      <Row title="Animations Movies" fetchUrl={moviesRequests.fetchAnimationMovies} />
-      <Row title="Comedy Movies" fetchUrl={moviesRequests.fetchComedyMovies} />
-      <Row title="Drama Movies" fetchUrl={moviesRequests.fetchDramaMovies} />
-      <Row title="Documentary" fetchUrl={moviesRequests.fetchDocumentaryMovies} />
-      <Row title="For all the family" fetchUrl={moviesRequests.fetchFamilyMovies} />
-      <Row title="Fantasy Movies" fetchUrl={moviesRequests.fetchFantasyMovies} />
-      <Row title="History Movies" fetchUrl={moviesRequests.fetchHistoryMovies} />
-      <Row title="Horror Movies" fetchUrl={moviesRequests.fetchHorrorMovies} />
-      <Row title="Music Movies" fetchUrl={moviesRequests.fetchMusicMovies} />
-      <Row title="Mystery Movies" fetchUrl={moviesRequests.fetchMysteryMovies} />
-      <Row title="Romance" fetchUrl={moviesRequests.fetchRomanceMovies} />
-      <Row title="Sci-Fi" fetchUrl={moviesRequests.fetchSciFiMovies} />
-      <Row title="War and Military" fetchUrl={moviesRequests.fetchWarMovies} />
-      <Row title="Thriller Movies" fetchUrl={moviesRequests.fetchThrillerMovies} />
+      <Row title="Top Rated" fetchUrl={tvRequests.fetchTopRated} />
+      <Row title="Action and Adventures" fetchUrl={tvRequests.fetchActionAdventureSeries} />
+      <Row title="Crimes and Investigations" fetchUrl={tvRequests.fetchCrimeSeries} />
+      <Row title="Comedy" fetchUrl={tvRequests.fetchComedySeries} />
+      <Row title="Documentary" fetchUrl={tvRequests.fetchDocumentarySeries} />
+      <Row title="Reality" fetchUrl={tvRequests.fetchRealitySeries} />
+      <Row title="Sci-Fi and Fantasy" fetchUrl={tvRequests.fetchSciFiFantasySeries} />
+      <Row title="War and Politics" fetchUrl={tvRequests.fetchWarPoliticsSeries} />
+      <Row title="Drama" fetchUrl={tvRequests.fetchDramaSeries} />
+
+      
     </div>
   );
 }

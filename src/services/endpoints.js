@@ -1,4 +1,6 @@
-import {API_KEY} from './config';
+import { API_KEY } from './config';
+import axios from '../services/axios';
+
 
 export const moviesRequests = {
     fetchTrending: `/trending/all/week?api_key=${API_KEY}&language=en-US`,
@@ -24,16 +26,21 @@ export const moviesRequests = {
 }
 
 export const tvRequests = {
-fetchActionAdventureSeries: `/discover/tv?api_key=${API_KEY}&with_genres=10759`,
-fetchAnimationSeries: `/discover/tv?api_key=${API_KEY}&with_genres=16`,
-fetchComedySeries: `/discover/tv?api_key=${API_KEY}&with_genres=35`,
-fetchCrimeSeries: `/discover/tv?api_key=${API_KEY}&with_genres=80`,
-fetchDocumentarySeries: `/discover/tv?api_key=${API_KEY}&with_genres=99`,
-fetchDramaSeries: `/discover/tv?api_key=${API_KEY}&with_genres=18`,
-fetchFamily: `/discover/tv?api_key=${API_KEY}&with_genres=10751`,
-fetchRealitySeries: `/discover/tv?api_key=${API_KEY}&with_genres=10764`,
-fetchSciFiFantasySeries: `/discover/tv?api_key=${API_KEY}&with_genres=10765`,
-fetchWarPoliticsSeries: `/discover/tv?api_key=${API_KEY}&with_genres=10768`,
-fetchKidsSeries: `/discover/tv?api_key=${API_KEY}&with_genres=10762`,
+    fetchTredingSeriesNow: `/trending/tv/day?api_key=${API_KEY}`,
+    fetchTopRated: `https://api.themoviedb.org/3/tv/popular?api_key=${API_KEY}&language=en-US&page=2`,
+    fetchActionAdventureSeries: `/discover/tv?api_key=${API_KEY}&with_genres=10759&without_genres=16&page=3`,
+    fetchAnimationSeries: `/discover/tv?api_key=${API_KEY}&with_genres=16`,
+    fetchComedySeries: `/discover/tv?api_key=${API_KEY}&with_genres=35`,
+    fetchCrimeSeries: `/discover/tv?api_key=${API_KEY}&with_genres=80`,
+    fetchDocumentarySeries: `/discover/tv?api_key=${API_KEY}&with_genres=99`,
+    fetchDramaSeries: `/discover/tv?api_key=${API_KEY}&with_genres=18&page=4`,
+    fetchRealitySeries: `/discover/tv?api_key=${API_KEY}&with_genres=10764`,
+    fetchSciFiFantasySeries: `/discover/tv?api_key=${API_KEY}&with_genres=10765&without_genres=16&page=2`,
+    fetchWarPoliticsSeries: `/discover/tv?api_key=${API_KEY}&with_genres=10768`,
+}
+
+export const getTrailers = (id) => {
+ return `https://api.themoviedb.org/3/tv/${id}/videos?api_key=${API_KEY}&language=en-US`
+
 }
 
